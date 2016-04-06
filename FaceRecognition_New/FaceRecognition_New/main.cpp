@@ -19,11 +19,6 @@ int main()
 {
 
 
-	//fisherFaceTrainer();
-	//FaceRecognition();
-	//system("pause");
-
-
 	string classifier = "C:/opencv/sources/data/haarcascades/haarcascade_frontalface_alt.xml";
 	cout << "classifier" << classifier << endl;
 
