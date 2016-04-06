@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FaceRec.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A18AB650-3C0F-4D8E-A414-8F59B8EA783A}</ProjectGuid>
     <RootNamespace>FaceRecognition_New</RootNamespace>
