@@ -1,13 +1,25 @@
 
+#include<stdio.h>
+#include<math.h>
+#include<opencv\cv.h>
+#include<opencv\highgui.h>
+#include<opencv2\objdetect\objdetect.hpp>
+#include<opencv2\highgui\highgui.hpp>
+#include<opencv2\imgproc\imgproc.hpp>
 #include<vector>
 #include <iostream>
-#include "FaceRec.h"
+
 using namespace cv;
 using namespace std;
 
 int main()
 {
-	/*/
+
+
+	//fisherFaceTrainer();
+	//FaceRecognition();
+	//system("pause");
+
 
 	string classifier = "C:/opencv/sources/data/haarcascades/haarcascade_frontalface_alt.xml";
 	cout << "classifier" << classifier << endl;
@@ -15,8 +27,8 @@ int main()
 	CascadeClassifier face_cascade;
 
 	face_cascade.load(classifier);
-	VideoCapture captureDevice;
-	captureDevice.open(0);
+	VideoCapture captureDevice(CV_CAP_ANY);
+	captureDevice.open(CV_CAP_ANY);
 
 	if (!captureDevice.isOpened()) {
 		cout << "failed to open camera" << endl;
@@ -37,7 +49,7 @@ int main()
 		cvtColor(captureFrame, grayScaleFrame, CV_BGR2GRAY);
 
 		equalizeHist(grayScaleFrame, grayScaleFrame);
-		
+
 		vector<Rect> faces;
 		face_cascade.detectMultiScale(grayScaleFrame, faces, 1.1, 3, CV_HAAR_FIND_BIGGEST_OBJECT | CV_HAAR_SCALE_IMAGE, Size(30, 30));
 		cout << "Number of faces detected is : " << faces.size() << endl;
@@ -47,13 +59,10 @@ int main()
 			rectangle(captureFrame, pt1, pt2, cvScalar(0, 255, 0, 0), 1, 8, 0);
 
 		}
-		
 		imshow("outputCapture", captureFrame);
-		//imshow("grayScaleimage", grayScaleFrame);
+		imshow("grayScaleimage", grayScaleFrame);
 		waitKey(33);
 	}
-	*/
-	//LBPHFaceTrainer();
-	FaceRecognition();
+
 	return 0;
 }
